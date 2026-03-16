@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cl3dpfh4mct24"]
+
+[ext_resource type="Texture2D" uid="uid://1g2q4hir4vyi" path="res://Assets/Test_Box_Map.jpg" id="1_o1l64"]
+[ext_resource type="PackedScene" uid="uid://bd3disl3mtoxe" path="res://Player/player.tscn" id="2_rtw2h"]
+
+[node name="Boofy\'s_Test_Box" type="Node2D" unique_id=261119652]
+
+[node name="Test_Box_Background" type="TextureRect" parent="." unique_id=2003620960]
+offset_left = -371.0
+offset_top = -243.0
+offset_right = 1629.0
+offset_bottom = 957.0
+texture = ExtResource("1_o1l64")
+
+[node name="Player" parent="." unique_id=18592662 instance=ExtResource("2_rtw2h")]
