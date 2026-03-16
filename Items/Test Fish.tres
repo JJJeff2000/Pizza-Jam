@@ -1,7 +1,16 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cqm5x510m0kim"]
 
+[ext_resource type="Texture2D" uid="uid://dokdygir0m238" path="res://Assets/Test_Fish.png" id="1_w3pt6"]
 [ext_resource type="Script" uid="uid://be20jy7ucu2pk" path="res://Inventory/item_data.gd" id="1_xb3ik"]
 
 [resource]
 script = ExtResource("1_xb3ik")
+id = "fish_test"
+display_name = "Fish"
+icon = ExtResource("1_w3pt6")
+category = "fish"
+max_stack = 20
+sell_price = 6
+description = "A fish to test the inventory."
+rarity = 1
 metadata/_custom_type_script = "uid://be20jy7ucu2pk"

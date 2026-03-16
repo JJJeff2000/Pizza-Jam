@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://wg2sh4otcrm3" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://bofs287s7ynms" path="res://Assets/Player_Test_Sprite.png" id="1_l8h54"]
+[ext_resource type="PackedScene" uid="uid://c24cn53txkqhj" path="res://Inventory/inventory_panel.tscn" id="3_btcbx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ntmi"]
 size = Vector2(66, 76)
@@ -19,3 +20,6 @@ shape = SubResource("RectangleShape2D_4ntmi")
 
 [node name="Player_Camera" type="Camera2D" parent="." unique_id=555702397]
 zoom = Vector2(0.8, 0.8)
+
+[node name="InventoryPanel" parent="." unique_id=1860670774 instance=ExtResource("3_btcbx")]
+z_index = 2

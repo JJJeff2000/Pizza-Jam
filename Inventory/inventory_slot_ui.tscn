@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bgamnd0wdb8nr"]
+
+[ext_resource type="Script" uid="uid://dsmrog7kprcu3" path="res://Inventory/inventory_slot_ui.gd" id="1_gsh4o"]
+
+[node name="InventorySlotUI" type="PanelContainer" unique_id=909187523]
+offset_right = 80.0
+offset_bottom = 80.0
+script = ExtResource("1_gsh4o")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=909374212]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1459203545]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=748677857]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Quantity" type="Label" parent="MarginContainer/VBoxContainer" unique_id=197987686]
+layout_mode = 2
+size_flags_vertical = 8

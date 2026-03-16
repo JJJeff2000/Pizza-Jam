@@ -8,7 +8,7 @@ var current_dir = "none"
 func _ready():
 	Global.player = self
 
-func _physics_process(_delta):
+func _physics_process(_delta) -> void:
 	_delta_player_movement()
 
 func _delta_player_movement():

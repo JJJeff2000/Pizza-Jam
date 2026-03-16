@@ -3,12 +3,14 @@ extends Node
 signal inventory_changed
 
 var player: CharacterBody2D
+var money_counter = 0
 var inventory: Inventory
 var items: Dictionary = {}
 
 func _ready():
 	inventory = Inventory.new(24)
-	inventory.changed.connect(_on_inventory_changed)
+	inventory.change.connect(_on_inventory_changed)
+	load_item(preload("res://Items/Test Fish.tres"))
 
 func _on_inventory_changed():
 	inventory_changed.emit()
