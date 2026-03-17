@@ -68,6 +68,7 @@ inventory_toggle={
 
 [physics]
 
+common/physics_ticks_per_second=280
 3d/physics_engine="Jolt Physics"
 
 [rendering]

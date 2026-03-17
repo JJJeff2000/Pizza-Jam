@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://xshudgkkg442" path="res://Assets/Ice_Burg.png" id="1_8l4l8"]
 [ext_resource type="PackedScene" uid="uid://djfvpgtque4ly" path="res://Scenes/hook.tscn" id="2_vry86"]
+[ext_resource type="Script" uid="uid://cbuguyl2u21e4" path="res://Scripts/fishing_line.gd" id="3_dut0b"]
 
 [node name="Mini_Game_Tester" type="Node2D" unique_id=1452706857]
 
@@ -12,4 +13,14 @@ offset_right = 1936.0
 offset_bottom = 3888.0
 texture = ExtResource("1_8l4l8")
 
+[node name="Start_Point" type="Node2D" parent="." unique_id=924702998]
+position = Vector2(571, -46)
+
 [node name="Hook" parent="." unique_id=1772606397 instance=ExtResource("2_vry86")]
+position = Vector2(575, 324)
+
+[node name="Fishing_Line" type="Line2D" parent="." unique_id=263382093]
+texture_filter = 1
+width = 3.0
+end_cap_mode = 2
+script = ExtResource("3_dut0b")
