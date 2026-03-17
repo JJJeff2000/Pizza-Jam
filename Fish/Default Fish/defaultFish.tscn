@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cxr4kr6tm133v"]
+
+[ext_resource type="Script" uid="uid://b5udwp0rfsoib" path="res://Fish/Default Fish/default_fish.gd" id="1_e072p"]
+[ext_resource type="Texture2D" uid="uid://c5w1vvmji6fga" path="res://Assets/icon.svg" id="2_npfsv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hf7v"]
+atlas = ExtResource("2_npfsv")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pfrhj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hf7v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jwhl"]
+size = Vector2(128, 128)
+
+[node name="DefaultFish" type="CharacterBody2D" unique_id=671979017]
+script = ExtResource("1_e072p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=429503607]
+sprite_frames = SubResource("SpriteFrames_pfrhj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=107039562]
+shape = SubResource("RectangleShape2D_5jwhl")
