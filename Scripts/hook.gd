@@ -10,4 +10,4 @@ func _process(_delta: float) -> void:
 	
 	velocity.y = speed
 	
-	move_and_slide()
+	move_and_slide() 
