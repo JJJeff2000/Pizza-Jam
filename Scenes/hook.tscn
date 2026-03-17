@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://djfvpgtque4ly"]
+
+[ext_resource type="Script" uid="uid://vbxxlnarhaph" path="res://Scripts/hook.gd" id="1_82nft"]
+[ext_resource type="Texture2D" uid="uid://48s6wsll540u" path="res://Assets/Hook_Tester.png" id="1_mrud3"]
+
+[node name="Hook" type="CharacterBody2D" unique_id=1772606397]
+script = ExtResource("1_82nft")
+
+[node name="Hook_Sprite" type="Sprite2D" parent="." unique_id=107249199]
+position = Vector2(575, 325)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_mrud3")
+
+[node name="Camera2D" type="Camera2D" parent="Hook_Sprite" unique_id=987842176]

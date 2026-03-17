@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://byvgkrcpdkw5n"]
+
+[ext_resource type="Texture2D" uid="uid://xshudgkkg442" path="res://Assets/Ice_Burg.png" id="1_8l4l8"]
+[ext_resource type="PackedScene" uid="uid://djfvpgtque4ly" path="res://Scenes/hook.tscn" id="2_vry86"]
+
+[node name="Mini_Game_Tester" type="Node2D" unique_id=1452706857]
+
+[node name="Background_Burg" type="TextureRect" parent="." unique_id=336893067]
+offset_left = -738.0
+offset_top = -24.0
+offset_right = 1936.0
+offset_bottom = 3888.0
+texture = ExtResource("1_8l4l8")
+
+[node name="Hook" parent="." unique_id=1772606397 instance=ExtResource("2_vry86")]
