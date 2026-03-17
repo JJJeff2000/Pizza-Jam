@@ -4,6 +4,67 @@
 [ext_resource type="Texture2D" uid="uid://1g2q4hir4vyi" path="res://Assets/Test_Box_Map.jpg" id="1_o1l64"]
 [ext_resource type="PackedScene" uid="uid://bd3disl3mtoxe" path="res://Player/player.tscn" id="2_rtw2h"]
 
+[sub_resource type="Gradient" id="Gradient_kvjx3"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2mqu3"]
+gradient = SubResource("Gradient_kvjx3")
+
+[sub_resource type="Animation" id="Animation_kwob5"]
+resource_name = "Fade_In"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.93333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kvjx3"]
+resource_name = "Fade_Out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uj2ce"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tnonr"]
+_data = {
+&"Fade_In": SubResource("Animation_kwob5"),
+&"Fade_Out": SubResource("Animation_kvjx3"),
+&"RESET": SubResource("Animation_uj2ce")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvjx3"]
+size = Vector2(80, 80)
+
 [node name="Boofy\'s_Test_Box" type="Node2D" unique_id=261119652]
 script = ExtResource("1_kvjx3")
 
@@ -16,6 +77,14 @@ texture = ExtResource("1_o1l64")
 
 [node name="Player" parent="." unique_id=18592662 instance=ExtResource("2_rtw2h")]
 position = Vector2(624, 528)
+
+[node name="TextureRect" type="TextureRect" parent="Player" unique_id=732335212]
+z_index = 6
+offset_left = -740.0
+offset_top = -432.0
+offset_right = 748.0
+offset_bottom = 432.0
+texture = SubResource("GradientTexture1D_2mqu3")
 
 [node name="Remove Fish" type="Button" parent="." unique_id=1881983896]
 offset_left = 784.0
@@ -33,5 +102,28 @@ offset_bottom = 408.0
 focus_mode = 0
 text = "Add Fish"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=379811660]
+libraries/ = SubResource("AnimationLibrary_tnonr")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1933259411]
+position = Vector2(-248, -121)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=621123506]
+position = Vector2(-3, -2)
+shape = SubResource("RectangleShape2D_kvjx3")
+
+[node name="Label" type="Label" parent="." unique_id=995297230]
+visible = false
+offset_left = -307.0
+offset_top = -196.0
+offset_right = -194.0
+offset_bottom = -173.0
+text = "Press E To Fish"
+
+[node name="Scene_Change" type="Timer" parent="." unique_id=174797644]
+
 [connection signal="pressed" from="Remove Fish" to="." method="_on_remove_fish_pressed"]
 [connection signal="pressed" from="Add Fish" to="." method="_on_add_fish_pressed"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Scene_Change" to="." method="_on_scene_change_timeout"]
